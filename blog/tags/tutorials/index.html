@@ -7,14 +7,14 @@
 <link rel="alternate" type="application/rss+xml" href="/PopGen.jl/blog/rss.xml" title="PopGen.jl Blog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/PopGen.jl/blog/atom.xml" title="PopGen.jl Blog Atom Feed">
 <link rel="search" type="application/opensearchdescription+xml" title="PopGen.jl" href="/PopGen.jl/opensearch.xml"><title data-react-helmet="true">Posts tagged &quot;tutorials&quot; | PopGen.jl</title><meta data-react-helmet="true" property="og:title" content="Posts tagged &quot;tutorials&quot; | PopGen.jl"><meta data-react-helmet="true" name="description" content="Blog | Tagged &quot;tutorials&quot;"><meta data-react-helmet="true" property="og:description" content="Blog | Tagged &quot;tutorials&quot;"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" name="docsearch:language" content="en"><meta data-react-helmet="true" name="docsearch:docusaurus_tag" content="default"><link data-react-helmet="true" rel="shortcut icon" href="/PopGen.jl/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link rel="stylesheet" href="/PopGen.jl/styles.bae94d6c.css">
-<link rel="preload" href="/PopGen.jl/styles.b639303d.js" as="script">
-<link rel="preload" href="/PopGen.jl/runtime~main.7701e6f2.js" as="script">
-<link rel="preload" href="/PopGen.jl/main.0a161c9f.js" as="script">
-<link rel="preload" href="/PopGen.jl/1.03bc73f3.js" as="script">
-<link rel="preload" href="/PopGen.jl/2.f5d3ab97.js" as="script">
-<link rel="preload" href="/PopGen.jl/6875c492.df61231c.js" as="script">
+<link rel="preload" href="/PopGen.jl/styles.e44c4dca.js" as="script">
+<link rel="preload" href="/PopGen.jl/runtime~main.07f2ec19.js" as="script">
+<link rel="preload" href="/PopGen.jl/main.ecd3f0de.js" as="script">
+<link rel="preload" href="/PopGen.jl/1.2d323810.js" as="script">
+<link rel="preload" href="/PopGen.jl/2.7b0fd6e1.js" as="script">
+<link rel="preload" href="/PopGen.jl/6875c492.f2418ee0.js" as="script">
 <link rel="preload" href="/PopGen.jl/2a2e7f9e.c65b043a.js" as="script">
-<link rel="preload" href="/PopGen.jl/717e8ed0.1cf0ba67.js" as="script">
+<link rel="preload" href="/PopGen.jl/717e8ed0.f32529e3.js" as="script">
 <link rel="preload" href="/PopGen.jl/63858160.69c61852.js" as="script">
 </head>
 <body>
@@ -29,14 +29,14 @@ options are (and not limited to): Makie.jl, Gadfly.jl, VegaLite.jl, and PlotlyJS
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">julia&gt; halfsibs_ci = quantile(half_sims_rel.LynchLi, (0.025, 0.975))</span></div><div class="token-line" style="color:#393A34"><span class="token plain">(-0.06652262584414452, 0.5556155725649398)</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">julia&gt; fullsibs_ci = quantile(full_sims_rel.LynchLi, (0.025, 0.975))</span></div><div class="token-line" style="color:#393A34"><span class="token plain">(0.1989727186688347, 0.8219939374819633)</span></div></div></div><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button></div></div><p>So, given our data and the simulations we made, we can now make a reasonable assumption regarding the ranges for each sibship relationship:</p><table><thead><tr><th align="left">Relationship</th><th align="center">Lower Bound</th><th align="center">Upper Bound</th></tr></thead><tbody><tr><td align="left">unrelated</td><td align="center">-0.338</td><td align="center">0.331</td></tr><tr><td align="left">half sibling</td><td align="center">-0.066</td><td align="center">0.555</td></tr><tr><td align="left">full sibling</td><td align="center">0.199</td><td align="center">0.82</td></tr></tbody></table><h3><a aria-hidden="true" tabindex="-1" class="anchor" id="4-finally-the-data-assessment"></a>4. Finally, the data assessment<a class="hash-link" href="#4-finally-the-data-assessment" title="Direct link to heading">#</a></h3><p>Now that we have our relatedness estimates and the acceptable sibship ranges given our data, we can see where our data falls.
 <em>Now</em>, we can say that a particular sample pair is unrelated/halfsib/fullsib if:</p><ol><li>that pair&#x27;s confidence interval does not include zero and </li><li>that pair&#x27;s estimate falls within any of the three calculate ranges</li></ol><p>Unfortunately, the ranges overlap quite a bit, which makes interpretation difficult, so it may be suitable to use a different estimator. </p><h3><a aria-hidden="true" tabindex="-1" class="anchor" id="closing-remarks"></a>Closing remarks<a class="hash-link" href="#closing-remarks" title="Direct link to heading">#</a></h3><p>There is more that can be done for relatedness, like network analysis. However, this tutorial covers what we consider a reasonable way to assess kinship in population genetic studies. If removing kin is your ultimate goal, consider the effects doing that may have on the analyses you are looking to do. Additionally, consider which individual of a pair you would remove and why. If you were curious as to how many identical loci a pair of samples may share, you can check that using <code>pairwise_identical()</code>. Good luck!</p></section><footer class="row margin-vert--lg"><div class="col"><strong>Tags:</strong><a class="margin-horiz--sm" href="/PopGen.jl/blog/tags/tutorials">tutorials</a></div><div class="col text--right"><a aria-label="Read more about Relatedness Tutorial" href="/PopGen.jl/blog/relatedness"><strong>Read More</strong></a></div></footer></article></div></main></div></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 Pavel Dimens & Jason Selwyn. Built with Docusaurus. Rawr!</div></div></div></footer></div>
-<script src="/PopGen.jl/styles.b639303d.js"></script>
-<script src="/PopGen.jl/runtime~main.7701e6f2.js"></script>
-<script src="/PopGen.jl/main.0a161c9f.js"></script>
-<script src="/PopGen.jl/1.03bc73f3.js"></script>
-<script src="/PopGen.jl/2.f5d3ab97.js"></script>
-<script src="/PopGen.jl/6875c492.df61231c.js"></script>
+<script src="/PopGen.jl/styles.e44c4dca.js"></script>
+<script src="/PopGen.jl/runtime~main.07f2ec19.js"></script>
+<script src="/PopGen.jl/main.ecd3f0de.js"></script>
+<script src="/PopGen.jl/1.2d323810.js"></script>
+<script src="/PopGen.jl/2.7b0fd6e1.js"></script>
+<script src="/PopGen.jl/6875c492.f2418ee0.js"></script>
 <script src="/PopGen.jl/2a2e7f9e.c65b043a.js"></script>
-<script src="/PopGen.jl/717e8ed0.1cf0ba67.js"></script>
+<script src="/PopGen.jl/717e8ed0.f32529e3.js"></script>
 <script src="/PopGen.jl/63858160.69c61852.js"></script>
 </body>
 </html>
